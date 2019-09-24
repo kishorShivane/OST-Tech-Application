@@ -1,0 +1,26 @@
+<div style="text-align:center">
+    <div class="row">
+        <div class="col-sm-12">
+          <form [formGroup]="residentRegistrationForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" formControlName="IDNumber" class="form-control" id="txtIDNumber" placeholder="Enter South African IDNumber to Proceed"  [ngClass]="{ 'is-invalid': submitted && f.IDNumber.errors}"/>
+                  <div *ngIf="submitted && f.IDNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.IDNumber.errors?.required">ID Number is required</div>
+                    <div *ngIf="f.IDNumber.errors?.minlength">Minimum length of ID Number is 13</div>
+                    <div *ngIf="f.IDNumber.errors?.pattern">Please enter numeric value.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+ </div>
+ <app-resident-list [resident]="resident"></app-resident-list>

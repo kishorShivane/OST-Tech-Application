@@ -1,0 +1,10 @@
+.invalid-feedback {
+    margin-top: .25rem;
+    font-size: 15px;
+    color: #dc3545;
+}
+
+.is-invalid
+{
+    border: #dc3545;
+}
